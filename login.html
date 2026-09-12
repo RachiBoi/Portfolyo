@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login & Register | Student Portfolio Tracker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<style>
+:root { --bg: #000000; --card-bg: #12202c; --text: #ffffff; --muted: #8e8e93; --border: #739ec9; }
+body.light-mode { --bg: #f2f2f7; --card-bg: #ffffff; --text: #111114; --muted: #6b6b70; --border: #e2e2e7; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; transition: background 0.25s, color 0.25s; overflow: hidden; }
+body::before { content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 50%, rgba(115,158,201,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,232,219,0.06) 0%, transparent 50%); animation: bgShift 15s ease infinite; z-index: -1; }
+@keyframes bgShift { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(180deg); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.auth-container { width: 100%; max-width: 440px; position: relative; animation: slideUp 0.6s cubic-bezier(0.16,1,0.3,1); }
+.auth-card { backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); background: rgba(18,32,44,0.85); border: 1px solid rgba(115,158,201,0.3); border-radius: 28px; padding: 36px 30px; box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05) inset; }
+body.light-mode .auth-card { background: rgba(255,255,255,0.85); border: 1px solid rgba(226,226,231,0.5); box-shadow: 0 24px 80px rgba(0,0,0,0.08); }
+.auth-header { text-align: center; margin-bottom: 28px; }
+.logo-badge { width: 60px; height: 60px; background: linear-gradient(135deg, rgba(255,232,219,0.15), rgba(115,158,201,0.15)); border: 1px solid rgba(115,158,201,0.3); border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 14px; animation: float 3s ease-in-out infinite; box-shadow: 0 8px 32px rgba(255,232,219,0.2); }
+.auth-header h1 { font-size: 22px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.5px; }
+.auth-header p { color: var(--muted); font-size: 13px; }
+.auth-tabs { display: flex; background: rgba(0,0,0,0.3); padding: 4px; border-radius: 16px; border: 1px solid rgba(115,158,201,0.2); margin-bottom: 22px; gap: 4px; }
+body.light-mode .auth-tabs { background: rgba(0,0,0,0.04); }
+.auth-tab-btn { flex: 1; padding: 10px; border: none; background: transparent; color: var(--muted); font-size: 13px; font-weight: 700; border-radius: 12px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+.auth-tab-btn.active { background: linear-gradient(135deg, #ffe8db, rgba(255,232,219,0.85)); color: #000; box-shadow: 0 4px 16px rgba(255,232,219,0.3); }
+.auth-tab-btn:not(.active):hover { background: rgba(255,232,219,0.08); }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.8px; }
+.input-field { width: 100%; padding: 12px 16px; background: rgba(0,0,0,0.25); border: 1px solid rgba(115,158,201,0.25); border-radius: 14px; color: var(--text); font-size: 14px; outline: none; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+body.light-mode .input-field { background: rgba(0,0,0,0.03); }
+.input-field:focus { border-color: #ffe8db; box-shadow: 0 0 0 3px rgba(255,232,219,0.15); transform: translateY(-1px); }
+.input-field::placeholder { color: var(--muted); opacity: 0.6; }
+</style>
+</head>
+
+
+<body>
+<div class="auth-container">
+  <button class="theme-btn" onclick="toggleTheme()" id="theme-pill">🌙 Dark</button>
+  <div class="auth-card">
+    <div class="auth-header">
+      <div class="logo-badge">🎓</div>
+      <h1>PORTFOLIO TRACKER</h1>
+      <p>CBSE • ICSE • State Board Milestone Hub</p>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab-btn active" id="tab-login-btn" onclick="switchAuthTab('login')">Sign In</button>
+      <button class="auth-tab-btn" id="tab-register-btn" onclick="switchAuthTab('register')">Register</button>
+    </div>
+    <form id="login-form" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" class="input-field" placeholder="arjun.sharma@school.edu" required />
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Password</label>
+        <input type="password" id="login-pass" class="input-field" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn-submit">Enter Portfolio 🚀</button>
+    </form>
+    <form id="register-form" style="display:none;" onsubmit="handleRegister(event)">
+      <div class="form-group">
+        <label>Role</label>
+        <div class="role-selector">
+          <div class="role-option active" onclick="selectRole(this, 'student')">🎓 Student</div>
+          <div class="role-option" onclick="selectRole(this, 'teacher')">🧑🏫 Teacher</div>
+          <div class="role-option" onclick="selectRole(this, 'parent')">👨👩👦 Parent</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="reg-name">Full Name</label>
+        <input type="text" id="reg-name" class="input-field" placeholder="Arjun Sharma" required />
+      </div>
+      <div class="form-group">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" class="input-field" placeholder="arjun.sharma@school.edu" required />
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+        <div class="form-group">
+          <label>Board</label>
+          <select id="reg-board" class="input-field" style="background:var(--bg);">
+            <option>CBSE</option><option>ICSE</option><option>State</option><option>IB</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Grade</label>
+          <select id="reg-grade" class="input-field" style="background:var(--bg);">
+            <option>12</option><option>11</option><option>10</option><option>9</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="reg-pass">Password</label>
+        <input type="password" id="reg-pass" class="input-field" placeholder="Min. 6 chars" minlength="6" required />
+      </div>
+      <button type="submit" class="btn-submit">Create Account 🎉</button>
+    </form>
+    <div class="demo-pill">
+      <span>Demo: <strong>Arjun Sharma (12)</strong></span>
+      <button type="button" class="demo-btn" onclick="fillDemo()">Auto-Fill</button>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast">Welcome back!</div>
+<script>
+var selectedRole = 'student';
+function switchAuthTab(m) {
+  var lf = document.getElementById('login-form'), rf = document.getElementById('register-form');
+  var lb = document.getElementById('tab-login-btn'), rb = document.getElementById('tab-register-btn');
+  if (m === 'login') {
+    lf.style.display = 'block'; rf.style.display = 'none';
+    lb.classList.add('active'); rb.classList.remove('active');
+  } else {
+    lf.style.display = 'none'; rf.style.display = 'block';
+    lb.classList.remove('active'); rb.classList.add('active');
+  }
+}
+function selectRole(el, r) {
+  document.querySelectorAll('.role-option').forEach(function(o){ o.classList.remove('active'); });
+  el.classList.add('active'); selectedRole = r;
+}
+function fillDemo() {
+  switchAuthTab('login');
+  document.getElementById('login-email').value = 'arjun.sharma@school.edu';
+  document.getElementById('login-pass').value = 'password123';
+  showToast('Demo credentials filled!');
+}
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2200);
+}
+function handleLogin(e) {
+  e.preventDefault();
+  var email = document.getElementById('login-email').value;
+  var user = { name: email.split('@')[0].replace('.', ' ').toUpperCase(), email: email, grade: '12', board: 'CBSE', role: 'student' };
+  localStorage.setItem('portfolio-current-user', JSON.stringify(user));
+  showToast('Signing in...');
+  setTimeout(function(){ window.location.href = 'demo_dashboard_v4.html'; }, 400);
+}
+function handleRegister(e) {
+  e.preventDefault();
+  var user = {
+    name: document.getElementById('reg-name').value,
+    email: document.getElementById('reg-email').value,
+    grade: document.getElementById('reg-grade').value,
+    board: document.getElementById('reg-board').value,
+    role: selectedRole
+  };
+  localStorage.setItem('portfolio-current-user', JSON.stringify(user));
+  showToast('Account created!');
+  setTimeout(function(){ window.location.href = 'demo_dashboard_v4.html'; }, 400);
+}
+function applyTheme(m) {
+  var p = document.getElementById('theme-pill');
+  if (m === 'light') { document.body.classList.add('light-mode'); p.textContent = '☀️ Light'; }
+  else { document.body.classList.remove('light-mode'); p.textContent = '🌙 Dark'; }
+}
+function toggleTheme() {
+  var next = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+  applyTheme(next); localStorage.setItem('portfolio-theme', next);
+}
+(function(){ var s = localStorage.getItem('portfolio-theme'); if (s) applyTheme(s); })();
+</script>
+</body>
+</html>

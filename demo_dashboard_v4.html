@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjun Sharma - Student Portfolio Dashboard | CBSE Grade 12</title>
+<meta name="description" content="Arjun Sharma's student portfolio dashboard: holistic score, academic performance, extracurricular activities, community service, interview readiness, and college application timeline for CBSE Grade 12.">
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.com/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arjun Sharma - Student Portfolio Dashboard">
+<meta property="og:description" content="Holistic score, academic performance, extracurricular activities, community service, interview readiness, and college application timeline for CBSE Grade 12.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN.com/">
+<meta property="og:site_name" content="Student Portfolio Tracker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arjun Sharma - Student Portfolio Dashboard">
+<meta name="twitter:description" content="Holistic score, academic performance, extracurricular activities, community service, interview readiness, and college application timeline for CBSE Grade 12.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Student Portfolio Tracker",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "Web",
+  "description": "A student milestone tracker covering academic performance, extracurricular activities, community service, interview readiness, and college application deadlines.",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Arjun Sharma",
+    "description": "CBSE Grade 12 student"
+  }
+}
+</script>
+
+<style>
+:root {
+  --bg: #000000;
+  --card-bg: #12202c;
+  --text: #ffffff;
+  --muted: #8e8e93;
+  --border: #739ec9;
+  --track-bg: #739ec9;
+}
+body.light-mode {
+  --bg: #f2f2f7;
+  --card-bg: #ffffff;
+  --text: #111114;
+  --muted: #6b6b70;
+  --border: #e2e2e7;
+  --track-bg: #e2e2e7;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.25s ease, color 0.25s ease; }
+.dashboard { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.header-left { display: flex; align-items: center; gap: 14px; }
+.logo { width: 44px; height: 44px; background: var(--card-bg); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; cursor: pointer; }
+.header-title h1 { margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+.header-title p { margin: 2px 0 0 0; color: var(--muted); font-size: 13px; font-weight: 500; }
+.header-right { display: flex; align-items: center; gap: 10px; }
+.pill { background: var(--card-bg); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+.pill:hover { border-color: #ffe8db; }
+.pill-green { color: #ffe8db; }
+.pill-orange { color: #739ec9; }
+.avatar { width: 40px; height: 40px; background: linear-gradient(135deg, #ffe8db, #5682b1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #000000; cursor: pointer; }
+.main-grid { display: grid; grid-template-columns: 56px 1fr; gap: 20px; }
+.sidebar { display: flex; flex-direction: column; gap: 10px; align-items: center; padding-top: 4px; }
+.nav-btn { width: 44px; height: 44px; background: var(--card-bg); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; transition: all 0.2s; border: none; color: var(--text); }
+.nav-btn:hover { background: var(--border); transform: scale(1.05); }
+.nav-btn.active { background: #ffe8db; color: #000000; }
+.nav-btn.settings { margin-top: auto; }
+.content-area { position: relative; }
+.tab-panel { display: none; animation: fadeIn 0.3s ease; }
+.tab-panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.card { background: var(--card-bg); border-radius: 20px; padding: 20px; position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s, background 0.25s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.card-title { margin: 0; font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.card-menu { color: var(--muted); cursor: pointer; font-size: 18px; background: none; border: none; padding: 4px; border-radius: 8px; transition: all 0.2s; }
+.card-menu:hover { background: var(--border); color: var(--text); }
+.score-circle-container { position: relative; width: 110px; height: 110px; flex-shrink: 0; }
+.score-circle-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+.score-value { font-size: 28px; font-weight: 800; color: var(--text); }
+.score-label { font-size: 10px; color: var(--muted); font-weight: 600; }
+.badge { display: inline-block; padding: 5px 12px; border-radius: 16px; font-size: 11px; font-weight: 700; margin-bottom: 8px; transition: all 0.3s; }
+.score-badge { padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; transition: all 0.25s ease; }
+.score-badge.exceptional { color: #00e676; background: rgba(0,230,118,0.15); }
+.score-badge.strong { color: #ffe8db; background: rgba(163,230,53,0.15); }
+.score-badge.good { color: #739ec9; background: rgba(251,146,60,0.15); }
+.score-badge.developing { color: #ff5252; background: rgba(255,82,82,0.15); }
+body.light-mode .score-badge.exceptional { color: #059669; background: rgba(5,150,105,0.15); }
+body.light-mode .score-badge.strong { color: #ca8a04; background: rgba(202,138,4,0.15); }
+body.light-mode .score-badge.good { color: #0369a1; background: rgba(3,105,161,0.15); }
+body.light-mode .score-badge.developing { color: #dc2626; background: rgba(220,38,38,0.15); }
+#main-circle { transition: stroke 0.3s ease; }
+#main-circle.exceptional { stroke: #00e676; }
+#main-circle.strong { stroke: #ffe8db; }
+#main-circle.good { stroke: #739ec9; }
+#main-circle.developing { stroke: #ff5252; }
+body.light-mode #main-circle.exceptional { stroke: #059669; }
+body.light-mode #main-circle.strong { stroke: #ca8a04; }
+body.light-mode #main-circle.good { stroke: #0369a1; }
+body.light-mode #main-circle.developing { stroke: #dc2626; }
+.score-big { font-size: 28px; font-weight: 800; margin-bottom: 2px; }
+.score-unit { font-size: 13px; color: var(--muted); font-weight: 500; }
+.progress-bar { background: var(--track-bg); height: 6px; border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.timeline-container { position: relative; padding-left: 56px; }
+.timeline-dates { position: absolute; left: 0; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: space-between; font-size: 10px; color: var(--muted); font-weight: 500; }
+.timeline-grid { position: absolute; left: 56px; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: space-between; }
+.timeline-grid-line { border-top: 1px dashed var(--border); width: 100%; }
+.timeline-items { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 2; }
+.timeline-item { display: flex; align-items: center; gap: 8px; }
+.timeline-bar { height: 28px; border-radius: 14px; display: flex; align-items: center; padding: 0 12px; font-size: 11px; font-weight: 700; color: #000000; white-space: nowrap; cursor: pointer; transition: all 0.2s; min-width: 132px; }
+.timeline-bar:hover { filter: brightness(1.1); transform: scaleX(1.02); }
+.timeline-bar.pending { background: var(--muted) !important; opacity: 0.7; }
+body.light-mode .timeline-bar.pending { background: var(--border) !important; opacity: 0.8; }
+.timeline-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1; }
+.timeline-points { font-size: 10px; color: var(--muted); font-weight: 500; white-space: nowrap; }
+.popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+.popup-overlay.show { display: flex; animation: fadeIn 0.15s ease; }
+.popup-card { background: var(--card-bg); border-radius: 20px; padding: 28px; max-width: 380px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.popup-title { font-size: 17px; font-weight: 800; margin-bottom: 14px; color: var(--text); }
+.popup-lines { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+.popup-line { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.popup-actions { display: flex; justify-content: flex-end; }
+.sim-slider { width: 100%; height: 4px; border-radius: 2px; outline: none; -webkit-appearance: none; appearance: none; background: var(--track-bg); }
+.sim-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; cursor: pointer; transition: transform 0.1s; }
+.sim-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.sim-slider.academic::-webkit-slider-thumb { background: #ffe8db; }
+.sim-slider.extra::-webkit-slider-thumb { background: #739ec9; }
+.sim-slider.service::-webkit-slider-thumb { background: #ffffff; }
+.sim-slider.lead::-webkit-slider-thumb { background: #739ec9; }
+.sim-slider.diversity::-webkit-slider-thumb { background: #ffe8db; }
+/* ============ MODERN UI ENHANCEMENTS ============ */
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-4px); } }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(255, 232, 219, 0.3); } 50% { box-shadow: 0 0 30px rgba(255, 232, 219, 0.5); } }
+@keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+
+/* Glassmorphism effects */
+.card, .metric-card, .auth-card, .popup-card {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background: rgba(18, 32, 44, 0.85) !important;
+  border: 1px solid rgba(115, 158, 201, 0.3);
+}
+
+body.light-mode .card, 
+body.light-mode .metric-card,
+body.light-mode .auth-card,
+body.light-mode .popup-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(226, 226, 231, 0.5);
+}
+
+/* Enhanced header with gradient */
+.header {
+  background: linear-gradient(135deg, transparent 0%, rgba(115, 158, 201, 0.05) 100%);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+/* Floating logo animation */
+.logo {
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 8px 24px rgba(255, 232, 219, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logo:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(255, 232, 219, 0.4);
+}
+
+/* Modern pills with hover effects */
+.pill {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(115, 158, 201, 0.3);
+  border-color: #ffe8db;
+}
+
+/* Avatar with gradient border */
+.avatar {
+  position: relative;
+  background: linear-gradient(135deg, #ffe8db 0%, #739ec9 100%);
+  padding: 2px;
+  animation: glow 3s ease-in-out infinite;
+}
+.avatar::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--card-bg);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Sidebar with modern transitions */
+.sidebar {
+  backdrop-filter: blur(10px);
+  background: rgba(18, 32, 44, 0.6) !important;
+}
+body.light-mode .sidebar {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+.nav-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 232, 219, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+.nav-btn:hover::before {
+  width: 100px;
+  height: 100px;
+}
+.nav-btn.active {
+  background: linear-gradient(135deg, #ffe8db 0%, rgba(255, 232, 219, 0.8) 100%);
+  box-shadow: 0 4px 16px rgba(255, 232, 219, 0.4);
+  transform: scale(1.05);
+}
+
+/* Enhanced metric cards */
+.metric-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(115, 158, 201, 0.2);
+}
+
+/* Shimmer effect for loading states */
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 232, 219, 0.2) 50%, transparent 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Enhanced progress bars */
+.progress-track {
+  position: relative;
+  overflow: visible;
+}
+.progress-fill {
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: inherit;
+  border-radius: 50%;
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* Modern cards with subtle gradient */
+.card {
+  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(115, 158, 201, 0.03) 100%) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover {
+  box-shadow: 0 12px 48px rgba(115, 158, 201, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Help button (floating) */
+.help-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #ffe8db 0%, #739ec9 100%);
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(255, 232, 219, 0.4);
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: float 3s ease-in-out infinite;
+}
+.help-btn:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 12px 48px rgba(255, 232, 219, 0.6);
+}
+.help-btn:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Smooth transitions for all interactive elements */
+button, .pill, .avatar, .nav-btn, .metric-card, .card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Enhanced animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover { background: #ffe8db; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .help-btn {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+    font-size: 20px;
+  }
+}
+
+.verify-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+.verify-yes { background: rgba(34,197,94,0.12); color: #22c55e; }
+.verify-no { background: rgba(255,82,82,0.12); color: #ff5252; }
+.dropdown-menu { position: absolute; top: 40px; right: 16px; background: var(--track-bg); border-radius: 12px; padding: 8px 0; min-width: 140px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 100; display: none; }
+.dropdown-menu.show { display: block; animation: fadeIn 0.15s ease; }
+.dropdown-item { padding: 8px 16px; font-size: 13px; color: var(--text); cursor: pointer; transition: background 0.15s; }
+.dropdown-item:hover { background: var(--border); }
+.btn-primary { background: #ffe8db; color: #000000; border: none; padding: 10px 20px; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.record-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.record-row:last-child { border-bottom: none; }
+.record-subject { font-size: 13px; font-weight: 600; }
+.record-meta { font-size: 11px; color: var(--muted); }
+.readiness-meter { background: var(--track-bg); height: 14px; border-radius: 7px; overflow: hidden; }
+.readiness-fill { height: 100%; border-radius: 7px; background: linear-gradient(90deg, #739ec9, #ffe8db); transition: width 0.6s ease; }
+.kbd { display: inline-block; background: var(--track-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: 11px; font-weight: 600; }
+@media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } .sidebar { flex-direction: row; justify-content: center; flex-wrap: wrap; } .top-row, .mid-row, .bottom-row { grid-template-columns: 1fr !important; } }
+</style>
+</head>
+<body>
+<div class="dashboard">
+  <div class="header">
+    <div class="header-left">
+      <div class="logo" onclick="showPopup('Portfolio Tracker v4.0 India Edition')">🎓</div>
+      <div class="header-title"><h1>PORTFOLIO</h1><p>Student Milestone Tracker</p></div>
+    </div>
+    <div class="header-right">
+      <div class="pill" onclick="toggleTheme()" id="theme-pill">🌙</div>
+      <div class="pill pill-green" onclick="toggleDate()" id="date-pill">📅 Aug 2026</div>
+      <div class="pill" onclick="toggleGrade()">CBSE Grade <span style="color:#739ec9;font-weight:700;" id="grade-display">12</span></div>
+      <div class="pill" onclick="exportCalendar()">📆 Sync to Calendar</div>
+      <div class="avatar" id="user-avatar" onclick="toggleProfileMenu()" title="Profile menu">AS</div>
+      <div class="dropdown-menu" id="profile-dropdown" style="top:56px; right:20px; min-width:180px;">
+        <div style="padding: 10px 16px; border-bottom: 1px solid var(--border);">
+          <div style="font-weight:700; font-size:13px;" id="profile-name-display">Arjun Sharma</div>
+          <div style="font-size:11px; color:var(--muted);" id="profile-email-display">CBSE Grade 12</div>
+        </div>
+        <div class="dropdown-item" onclick="showPopup('Arjun Sharma | CBSE Grade 12 | Target: IIT Delhi | Roll: 2026-CBSE-492')">👤 View Profile</div>
+        <div class="dropdown-item" onclick="showPopup('Activity Log: 8 total milestones recorded, 6 verified')">📊 My Milestones</div>
+        <div class="dropdown-item" onclick="showPopup('Exporting full portfolio resume in PDF...')">📄 Export Portfolio</div>
+        <div class="dropdown-item" style="color:#ff5252;" onclick="handleLogout()">🚪 Logout</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div class="sidebar">
+      <button class="nav-btn active" onclick="switchTab('overview', this)">📊</button>
+      <button class="nav-btn" onclick="switchTab('academic', this)">📚</button>
+      <button class="nav-btn" onclick="switchTab('extra', this)">🏆</button>
+      <button class="nav-btn" onclick="switchTab('service', this)">🤝</button>
+      <button class="nav-btn" onclick="switchTab('interview', this)">🎤</button>
+      <button class="nav-btn" onclick="switchTab('timeline', this)">📅</button>
+      <button class="nav-btn settings" onclick="showPopup('Settings: Notifications | Export PDF')">⚙️</button>
+    </div>
+
+    <div class="content-area">
+
+      <div class="tab-panel active" id="tab-overview"><h2 class="sr-only">Overview</h2>
+        <div class="top-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Holistic Score</h3>
+              <div style="position:relative;">
+                <button class="card-menu" onclick="toggleMenu('menu1')">⋯</button>
+                <div class="dropdown-menu" id="menu1">
+                  <div class="dropdown-item" onclick="showPopup('Exporting score report...')">📄 Export Report</div>
+                  <div class="dropdown-item" onclick="showPopup('Sharing with counselor...')">📤 Share</div>
+                  <div class="dropdown-item" onclick="showPopup('Score history: 72.1 → 74.8')">📈 View History</div>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 24px;">
+              <div class="score-circle-container">
+                <svg width="110" height="110" viewBox="0 0 110 110">
+                  <circle cx="55" cy="55" r="46" fill="none" stroke="#739ec9" stroke-width="7"/>
+                  <circle id="main-circle" cx="55" cy="55" r="46" fill="none" stroke="#ffe8db" stroke-width="7" 
+                          stroke-dasharray="289" stroke-dashoffset="72" stroke-linecap="round" 
+                          transform="rotate(-90 55 55)" style="transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);"/>
+                </svg>
+                <div class="score-circle-text">
+                  <div class="score-value" id="main-score">74.8</div>
+                  <div class="score-label">OVERALL</div>
+                </div>
+              </div>
+              <div style="flex: 1;">
+                <div class="badge" id="score-badge" style="background: rgba(163,230,53,0.15); color: #ffe8db;">✨ STRONG PROFILE</div>
+                <p style="margin: 0; color: #8e8e93; font-size: 12px; line-height: 1.5;">Competitive for DU, IITs, NITs. Focus on leadership depth.</p>
+                <div style="margin-top: 8px; display: flex; gap: 6px;">
+                  <span class="verify-badge verify-yes">✓ 6 Verified</span>
+                  <span class="verify-badge verify-no">○ 2 Pending</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Academic Performance</h3>
+              <div style="position:relative;">
+                <button class="card-menu" onclick="toggleMenu('menu2')">⋯</button>
+                <div class="dropdown-menu" id="menu2">
+                  <div class="dropdown-item" onclick="showPopup('Viewing all subjects...')">📚 All Subjects</div>
+                  <div class="dropdown-item" onclick="showPopup('Downloading mark sheet...')">⬇️ Download</div>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 16px; margin-bottom: 12px;">
+              <div><div class="score-big">87.5<span class="score-unit">%</span></div><div style="font-size: 11px; color: #8e8e93; margin-top: 2px;">Avg. Score</div></div>
+              <div><div class="score-big" style="color: #ffe8db;">A2<span class="score-unit"></span></div><div style="font-size: 11px; color: #8e8e93; margin-top: 2px;">CBSE Grade</div></div>
+            </div>
+            <svg width="100%" height="44" viewBox="0 0 300 44" style="overflow: visible;">
+              <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#ffe8db;stop-opacity:0.3" /><stop offset="100%" style="stop-color:#ffe8db;stop-opacity:0" /></linearGradient></defs>
+              <path d="M0,32 L30,28 L60,30 L90,18 L120,22 L150,14 L180,16 L210,9 L240,10 L270,7 L300,4" fill="none" stroke="#ffe8db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0,32 L30,28 L60,30 L90,18 L120,22 L150,14 L180,16 L210,9 L240,10 L270,7 L300,4 L300,44 L0,44 Z" fill="url(#grad1)" stroke="none"/>
+              <circle cx="300" cy="4" r="4" fill="#ffe8db"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mid-row" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Extracurricular</h3><button class="card-menu" onclick="showPopup('Extracurricular details: 6 categories covered')">⋯</button></div>
+            <div class="score-big">68.2<span class="score-unit">/100</span></div>
+            <div style="display: flex; gap: 5px; margin-bottom: 12px; margin-top: 10px;">
+              <div style="width:26px;height:26px;background:#739ec9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;" onclick="showPopup('Competition: 3 activities')">🏆</div>
+              <div style="width:26px;height:26px;background:#ffe8db;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;" onclick="showPopup('Arts: 2 activities')">🎨</div>
+              <div style="width:26px;height:26px;background:#739ec9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;" onclick="showPopup('Sports: 2 activities')">⚽</div>
+              <div style="width:26px;height:26px;background:#739ec9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;" onclick="showPopup('NCC: 1 activity')">🎖️</div>
+              <div style="width:26px;height:26px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;" onclick="showPopup('NSS: 1 activity')">🌱</div>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="background: #739ec9; width: 68%;"></div></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Community Service</h3><button class="card-menu" onclick="showPopup('Service breakdown: NSS (80h), Blood Drive (42h), Teaching (20h)')">⋯</button></div>
+            <div class="score-big" style="color: #ffffff;">142<span class="score-unit"> hrs</span></div>
+            <div style="font-size: 11px; color: #8e8e93; margin-bottom: 12px;">8 activities • Avg impact: 7.2</div>
+            <div style="display: flex; gap: 3px; height: 36px; align-items: flex-end;">
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 60%; opacity: 0.4; cursor: pointer;" onclick="showPopup('Activity 1: 18 hrs')"></div>
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 80%; opacity: 0.6; cursor: pointer;" onclick="showPopup('Activity 2: 24 hrs')"></div>
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 45%; opacity: 0.5; cursor: pointer;" onclick="showPopup('Activity 3: 14 hrs')"></div>
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 90%; opacity: 0.8; cursor: pointer;" onclick="showPopup('Activity 4: 28 hrs')"></div>
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 70%; opacity: 0.6; cursor: pointer;" onclick="showPopup('Activity 5: 22 hrs')"></div>
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 100%; opacity: 1; cursor: pointer;" onclick="showPopup('Activity 6: 30 hrs')"></div>
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 55%; opacity: 0.5; cursor: pointer;" onclick="showPopup('Activity 7: 18 hrs')"></div>
+              <div style="flex: 1; background: #ffffff; border-radius: 3px 3px 0 0; height: 75%; opacity: 0.7; cursor: pointer;" onclick="showPopup('Activity 8: 24 hrs')"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Leadership</h3><button class="card-menu" onclick="showPopup('Leadership score: 72.0/100')">⋯</button></div>
+            <div class="score-big" style="color: #739ec9;">72.0<span class="score-unit">/100</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px; cursor: pointer;" onclick="showPopup('School Captain | Verified by Mrs. Gupta | 25pts')">
+                <div style="width: 8px; height: 8px; background: #739ec9; border-radius: 50%;"></div>
+                <span style="font-size: 12px; color: #8e8e93;">School Captain</span>
+                <span style="margin-left: auto; font-size: 10px; color: #22c55e;">✓</span>
+                <span style="font-size: 12px; font-weight: 700; color: #739ec9;">25pts</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; cursor: pointer;" onclick="showPopup('NCC Sergeant | Verified by Lt. Sharma | 20pts')">
+                <div style="width: 8px; height: 8px; background: #739ec9; border-radius: 50%; opacity: 0.6;"></div>
+                <span style="font-size: 12px; color: #8e8e93;">NCC Sergeant</span>
+                <span style="margin-left: auto; font-size: 10px; color: #22c55e;">✓</span>
+                <span style="font-size: 12px; font-weight: 700; color: #739ec9; opacity: 0.6;">20pts</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; cursor: pointer;" onclick="showPopup('Event Coordinator | Pending verification | 15pts')">
+                <div style="width: 8px; height: 8px; background: #739ec9; border-radius: 50%; opacity: 0.3;"></div>
+                <span style="font-size: 12px; color: #8e8e93;">Event Coordinator</span>
+                <span style="margin-left: auto; font-size: 10px; color: #ff5252;">○</span>
+                <span style="font-size: 12px; font-weight: 700; color: #739ec9; opacity: 0.3;">15pts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-row" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px;">
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Milestone Timeline</h3><button class="card-menu" onclick="showPopup('Timeline view: Last 4 months')">⋯</button></div>
+            <div class="timeline-container">
+              <div class="timeline-dates"><span>Aug 30</span><span>Aug 15</span><span>Jul 30</span><span>Jul 15</span><span>Jun 30</span><span>Jun 15</span></div>
+              <div class="timeline-grid"><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div></div>
+              <div class="timeline-items">
+                <div class="timeline-item" style="margin-left: 5%;"><div class="timeline-bar" style="background: #ffe8db; width: 35%;" onclick="showPopup('State Science Fair | Verified | +12 pts')"><span style="margin-right: 6px;">🥇</span><span class="timeline-label">State Science Fair</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">+12 pts</span></div>
+                <div class="timeline-item" style="margin-left: 20%;"><div class="timeline-bar" style="background: #739ec9; width: 25%;" onclick="showPopup('School Captain | Verified | +25 pts')"><span style="margin-right: 6px;">👑</span><span class="timeline-label">School Captain</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">+25 pts</span></div>
+                <div class="timeline-item" style="margin-left: 10%;"><div class="timeline-bar" style="background: #fff; width: 30%;" onclick="showPopup('JEE Mock Top 1% | Verified | +8 pts')"><span style="margin-right: 6px;">📚</span><span class="timeline-label">JEE Mock Top 1%</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">+8 pts</span></div>
+                <div class="timeline-item" style="margin-left: 35%;"><div class="timeline-bar pending" style="width: 20%;" onclick="showPopup('NSS Blood Drive | Pending | +18 hrs')"><span style="margin-right: 6px;">🤝</span><span class="timeline-label">NSS Blood Drive</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">○</span></div><span class="timeline-points">+18 hrs</span></div>
+                <div class="timeline-item" style="margin-left: 15%;"><div class="timeline-bar" style="background: #ffe8db; width: 22%;" onclick="showPopup('Inter-School Art | Verified | +5 pts')"><span style="margin-right: 6px;">🎨</span><span class="timeline-label">Inter-School Art</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">+5 pts</span></div>
+                <div class="timeline-item" style="margin-left: 25%;"><div class="timeline-bar" style="background: #739ec9; width: 28%;" onclick="showPopup('Football District | Verified | +20 pts')"><span style="margin-right: 6px;">⚽</span><span class="timeline-label">Football District</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">+20 pts</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Score Simulator</h3><button class="card-menu" onclick="showPopup('Adjust sliders to simulate score changes')">⋯</button></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 12px;">
+              <div><div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: #8e8e93;">📚 Academic (35%)</span><span id="sim-academic-val" style="color: #ffe8db; font-weight: 700;">30.6</span></div><input type="range" class="sim-slider academic" id="sim-academic" min="0" max="100" value="87" oninput="updateSim()"></div>
+              <div><div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: #8e8e93;">🏆 Extra (25%)</span><span id="sim-extra-val" style="color: #739ec9; font-weight: 700;">17.1</span></div><input type="range" class="sim-slider extra" id="sim-extra" min="0" max="100" value="68" oninput="updateSim()"></div>
+              <div><div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: #8e8e93;">🤝 Service (15%)</span><span id="sim-service-val" style="color: #ffffff; font-weight: 700;">10.2</span></div><input type="range" class="sim-slider service" id="sim-service" min="0" max="100" value="68" oninput="updateSim()"></div>
+              <div><div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: #8e8e93;">👑 Leadership (15%)</span><span id="sim-lead-val" style="color: #739ec9; font-weight: 700;">10.8</span></div><input type="range" class="sim-slider lead" id="sim-lead" min="0" max="100" value="72" oninput="updateSim()"></div>
+              <div><div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: #8e8e93;">🌈 Diversity (10%)</span><span id="sim-div-val" style="color: #ffe8db; font-weight: 700;">6.0</span></div><input type="range" class="sim-slider diversity" id="sim-div" min="0" max="100" value="60" oninput="updateSim()"></div>
+            </div>
+            <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid #739ec9; text-align: center;">
+              <div style="font-size: 10px; color: #8e8e93; margin-bottom: 4px;">SIMULATED TOTAL</div>
+              <div id="sim-total" style="font-size: 32px; font-weight: 800; color: #ffe8db;">74.7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-academic"><h2 class="sr-only">Academic Performance</h2>
+        <div class="card" style="margin-bottom: 16px;">
+          <div class="card-header"><h3 class="card-title">Academic Records</h3><button class="btn-primary" onclick="showPopup('Add new academic record form would open here')">+ Add Record</button></div>
+          <div style="margin-top: 10px;">
+            <div class="record-row"><div><div class="record-subject">Physics</div><div class="record-meta">Term 2 • 2025-26 • Final</div></div><div class="record-score">92/100</div></div>
+            <div class="record-row"><div><div class="record-subject">Chemistry</div><div class="record-meta">Term 2 • 2025-26 • Final</div></div><div class="record-score">88/100</div></div>
+            <div class="record-row"><div><div class="record-subject">Mathematics</div><div class="record-meta">Term 2 • 2025-26 • Final</div></div><div class="record-score">95/100</div></div>
+            <div class="record-row"><div><div class="record-subject">English</div><div class="record-meta">Term 2 • 2025-26 • Final</div></div><div class="record-score">84/100</div></div>
+            <div class="record-row"><div><div class="record-subject">Computer Science</div><div class="record-meta">Term 2 • 2025-26 • Project</div></div><div class="record-score">91/100</div></div>
+            <div class="record-row"><div><div class="record-subject">Physical Education</div><div class="record-meta">Term 2 • 2025-26 • Practical</div></div><div class="record-score">96/100</div></div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div class="card" style="text-align: center;"><div class="score-big" style="color: #ffe8db;">92.0</div><div style="font-size: 12px; color: #8e8e93;">Science Average</div></div>
+          <div class="card" style="text-align: center;"><div class="score-big" style="color: #739ec9;">87.5</div><div style="font-size: 12px; color: #8e8e93;">Overall Average</div></div>
+          <div class="card" style="text-align: center;"><div class="score-big" style="color: #ffffff;">A2</div><div style="font-size: 12px; color: #8e8e93;">CBSE Grade</div></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-extra"><h2 class="sr-only">Extracurricular Activities</h2>
+        <div class="card" style="margin-bottom: 16px;">
+          <div class="card-header"><h3 class="card-title">Extracurricular Activities</h3><button class="btn-primary" onclick="showPopup('Add new activity form with certificate upload would open here')">+ Add Activity</button></div>
+          <div style="margin-top: 10px;">
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('State Science Fair | Competition | Verified by Dr. Rao | Certificate: stu1_State_Science_20250830.pdf')"><div><div class="record-subject">🏆 State Science Fair</div><div class="record-meta">Competition • State Level • 40 hrs</div></div><div style="display: flex; align-items: center; gap: 8px;"><span class="verify-badge verify-yes">✓ Verified</span><span style="color: #ffe8db; font-weight: 700;">+12</span></div></div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('Inter-School Art Exhibition | Arts | Verified by Ms. Patel | Certificate: stu1_Art_Exhibition_20250715.pdf')"><div><div class="record-subject">🎨 Inter-School Art Exhibition</div><div class="record-meta">Arts • District Level • 25 hrs</div></div><div style="display: flex; align-items: center; gap: 8px;"><span class="verify-badge verify-yes">✓ Verified</span><span style="color: #ffe8db; font-weight: 700;">+5</span></div></div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('Football District Tournament | Sports | Verified by Coach Kumar | Certificate: stu1_Football_20250620.pdf')"><div><div class="record-subject">⚽ Football District Tournament</div><div class="record-meta">Sports • District Level • 60 hrs</div></div><div style="display: flex; align-items: center; gap: 8px;"><span class="verify-badge verify-yes">✓ Verified</span><span style="color: #ffe8db; font-weight: 700;">+20</span></div></div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('NCC Camp | NCC | Verified by Lt. Sharma | Certificate: stu1_NCC_Camp_20250810.pdf')"><div><div class="record-subject">🎖️ NCC Annual Camp</div><div class="record-meta">NCC • National Level • 120 hrs</div></div><div style="display: flex; align-items: center; gap: 8px;"><span class="verify-badge verify-yes">✓ Verified</span><span style="color: #ffe8db; font-weight: 700;">+18</span></div></div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('NSS Blood Drive | NSS | PENDING verification | No certificate uploaded yet')"><div><div class="record-subject">🌱 NSS Blood Drive</div><div class="record-meta">NSS • School Level • 18 hrs</div></div><div style="display: flex; align-items: center; gap: 8px;"><span class="verify-badge verify-no">○ Pending</span><span style="color: #8e8e93; font-weight: 700;">+3</span></div></div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('Event Coordinator | Leadership | PENDING verification | Certificate: stu1_Event_20250805.pdf uploaded, awaiting approval')"><div><div class="record-subject">📋 Annual Day Coordinator</div><div class="record-meta">Leadership • School Level • 30 hrs</div></div><div style="display: flex; align-items: center; gap: 8px;"><span class="verify-badge verify-no">○ Pending</span><span style="color: #8e8e93; font-weight: 700;">+15</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-service"><h2 class="sr-only">Community Service</h2>
+        <div class="card" style="margin-bottom: 16px;">
+          <div class="card-header"><h3 class="card-title">Community Service Log</h3><button class="btn-primary" onclick="showPopup('Add service hours form would open here')">+ Log Hours</button></div>
+          <div style="margin-top: 10px;">
+            <div class="record-row"><div><div class="record-subject">🌱 NSS Blood Drive</div><div class="record-meta">18 hrs • Aug 2026 • Impact: 8/10</div></div><div class="record-score" style="color: #ffffff;">18h</div></div>
+            <div class="record-row"><div><div class="record-subject">🤝 Teaching Underprivileged Kids</div><div class="record-meta">30 hrs • Jul 2026 • Impact: 9/10</div></div><div class="record-score" style="color: #ffffff;">30h</div></div>
+            <div class="record-row"><div><div class="record-subject">🎖️ NCC Social Service</div><div class="record-meta">42 hrs • Jun 2026 • Impact: 7/10</div></div><div class="record-score" style="color: #ffffff;">42h</div></div>
+            <div class="record-row"><div><div class="record-subject">🌳 Tree Plantation Drive</div><div class="record-meta">12 hrs • May 2026 • Impact: 6/10</div></div><div class="record-score" style="color: #ffffff;">12h</div></div>
+            <div class="record-row"><div><div class="record-subject">🏥 Hospital Volunteer</div><div class="record-meta">24 hrs • Apr 2026 • Impact: 8/10</div></div><div class="record-score" style="color: #ffffff;">24h</div></div>
+            <div class="record-row"><div><div class="record-subject">📚 Literacy Campaign</div><div class="record-meta">16 hrs • Mar 2026 • Impact: 7/10</div></div><div class="record-score" style="color: #ffffff;">16h</div></div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="card" style="text-align: center;"><div class="score-big" style="color: #ffffff;">142</div><div style="font-size: 12px; color: #8e8e93;">Total Hours</div></div>
+          <div class="card" style="text-align: center;"><div class="score-big" style="color: #ffe8db;">68.0</div><div style="font-size: 12px; color: #8e8e93;">Service Score</div></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-interview"><h2 class="sr-only">Interview Preparation</h2>
+        <div class="card" style="margin-bottom: 16px;">
+          <div class="card-header">
+            <h3 class="card-title">Interview Readiness</h3>
+            <button class="btn-primary" onclick="showPopup('Log mock interview form would open here: Date, Interviewer, Feedback Score (1-10), Questions Asked')">+ Log Mock Interview</button>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px; margin-top: 10px;">
+            <div class="score-big" style="color: #ffe8db;" id="readiness-score">76<span class="score-unit">/100</span></div>
+            <div style="flex: 1;">
+              <div class="readiness-meter"><div class="readiness-fill" style="width: 76%;"></div></div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 6px;">Based on 4 mock interview attempts • Trending up</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Mock Interview Log</h3></div>
+          <div style="margin-top: 10px;">
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('Aug 20, 2026 | Interviewer: Dr. Rao (Physics HOD) | Score: 8/10 | Questions: Why engineering? Explain a project you led. How do you handle failure?')">
+              <div><div class="record-subject">🎓 Dr. Rao (Physics HOD)</div><div class="record-meta">Aug 20, 2026 • 3 questions asked</div></div>
+              <div class="record-score" style="color: #ffe8db;">8/10</div>
+            </div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('Aug 10, 2026 | Interviewer: Mom (Parent Panel) | Score: 7/10 | Questions: Tell me about yourself. Why this college?')">
+              <div><div class="record-subject">👪 Parent Mock Panel</div><div class="record-meta">Aug 10, 2026 • 2 questions asked</div></div>
+              <div class="record-score" style="color: #ffe8db;">7/10</div>
+            </div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('Jul 28, 2026 | Interviewer: Mr. Iyer (Counselor) | Score: 7/10 | Questions: Strengths and weaknesses. Where do you see yourself in 5 years?')">
+              <div><div class="record-subject">🧑‍🏫 Mr. Iyer (School Counselor)</div><div class="record-meta">Jul 28, 2026 • 2 questions asked</div></div>
+              <div class="record-score" style="color: #739ec9;">7/10</div>
+            </div>
+            <div class="record-row" style="cursor: pointer;" onclick="showPopup('Jul 12, 2026 | Interviewer: Mr. Iyer (Counselor) | Score: 6/10 | Questions: Why this major? Describe a challenge you overcame.')">
+              <div><div class="record-subject">🧑‍🏫 Mr. Iyer (School Counselor)</div><div class="record-meta">Jul 12, 2026 • 2 questions asked</div></div>
+              <div class="record-score" style="color: #739ec9;">6/10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-timeline"><h2 class="sr-only">Milestone Timeline</h2>
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Full Activity Timeline</h3><button class="btn-primary" onclick="showPopup('Filter by category, date range, or verification status')">🔍 Filter</button></div>
+          <div class="timeline-container" style="margin-top: 20px; padding-left: 70px;">
+            <div class="timeline-dates"><span>Aug 2026</span><span>Jul 2026</span><span>Jun 2026</span><span>May 2026</span><span>Apr 2026</span><span>Mar 2026</span></div>
+            <div class="timeline-grid"><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div><div class="timeline-grid-line"></div></div>
+            <div class="timeline-items">
+              <div class="timeline-item" style="margin-left: 5%;"><div class="timeline-bar" style="background: #ffe8db; width: 40%;" onclick="showPopup('State Science Fair | Aug 2026 | Verified')"><span style="margin-right: 6px;">🥇</span><span class="timeline-label">State Science Fair</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">Competition</span></div>
+              <div class="timeline-item" style="margin-left: 25%;"><div class="timeline-bar" style="background: #739ec9; width: 30%;" onclick="showPopup('School Captain | Aug 2026 | Verified')"><span style="margin-right: 6px;">👑</span><span class="timeline-label">School Captain</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">Leadership</span></div>
+              <div class="timeline-item" style="margin-left: 15%;"><div class="timeline-bar pending" style="width: 25%;" onclick="showPopup('NSS Blood Drive | Aug 2026 | Pending')"><span style="margin-right: 6px;">🤝</span><span class="timeline-label">NSS Blood Drive</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">○</span></div><span class="timeline-points">NSS</span></div>
+              <div class="timeline-item" style="margin-left: 35%;"><div class="timeline-bar" style="background: #739ec9; width: 35%;" onclick="showPopup('NCC Camp | Jul 2026 | Verified')"><span style="margin-right: 6px;">🎖️</span><span class="timeline-label">NCC Annual Camp</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">NCC</span></div>
+              <div class="timeline-item" style="margin-left: 10%;"><div class="timeline-bar" style="background: #739ec9; width: 28%;" onclick="showPopup('Football District | Jun 2026 | Verified')"><span style="margin-right: 6px;">⚽</span><span class="timeline-label">Football District</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">Sports</span></div>
+              <div class="timeline-item" style="margin-left: 20%;"><div class="timeline-bar" style="background: #ffe8db; width: 22%;" onclick="showPopup('Art Exhibition | May 2026 | Verified')"><span style="margin-right: 6px;">🎨</span><span class="timeline-label">Inter-School Art</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">Arts</span></div>
+              <div class="timeline-item" style="margin-left: 30%;"><div class="timeline-bar" style="background: #22c55e; width: 20%;" onclick="showPopup('Tree Plantation | May 2026 | Verified')"><span style="margin-right: 6px;">🌳</span><span class="timeline-label">Tree Plantation</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">NSS</span></div>
+              <div class="timeline-item" style="margin-left: 8%;"><div class="timeline-bar" style="background: #ffe8db; width: 24%;" onclick="showPopup('Hospital Volunteer | Apr 2026 | Verified')"><span style="margin-right: 6px;">🏥</span><span class="timeline-label">Hospital Volunteer</span><span style="margin-left:auto;font-size:9px;opacity:0.6;">✓</span></div><span class="timeline-points">Service</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">Student Digital Portfolio & Milestone Tracker v4.0 India Edition</div>
+</div>
+
+<script>
+function switchTab(tabName, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById('tab-' + tabName).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+}
+
+function toggleMenu(menuId) {
+  document.querySelectorAll('.dropdown-menu').forEach(function(m) {
+    if (m.id !== menuId) m.classList.remove('show');
+  });
+  document.getElementById(menuId).classList.toggle('show');
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.card-menu') && !e.target.closest('.dropdown-menu')) {
+    document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+  }
+});
+
+function showPopup(message) {
+  var parts = message.split('|').map(function (s) { return s.trim(); }).filter(Boolean);
+  var title = parts.shift() || '';
+  var linesEl = document.getElementById('popup-lines');
+  linesEl.innerHTML = '';
+  parts.forEach(function (line) {
+    var p = document.createElement('div');
+    p.className = 'popup-line';
+    p.textContent = line;
+    linesEl.appendChild(p);
+  });
+  document.getElementById('popup-title').textContent = title;
+  document.getElementById('popup-overlay').classList.add('show');
+}
+
+function closePopup() {
+  document.getElementById('popup-overlay').classList.remove('show');
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closePopup();
+});
+
+function updateSim() {
+  var a = parseFloat(document.getElementById('sim-academic').value);
+  var e = parseFloat(document.getElementById('sim-extra').value);
+  var s = parseFloat(document.getElementById('sim-service').value);
+  var l = parseFloat(document.getElementById('sim-lead').value);
+  var d = parseFloat(document.getElementById('sim-div').value);
+  var t = a*0.35 + e*0.25 + s*0.15 + l*0.15 + d*0.10;
+  document.getElementById('sim-academic-val').textContent = (a*0.35).toFixed(1);
+  document.getElementById('sim-extra-val').textContent = (e*0.25).toFixed(1);
+  document.getElementById('sim-service-val').textContent = (s*0.15).toFixed(1);
+  document.getElementById('sim-lead-val').textContent = (l*0.15).toFixed(1);
+  document.getElementById('sim-div-val').textContent = (d*0.10).toFixed(1);
+  document.getElementById('sim-total').textContent = t.toFixed(1);
+
+  var circumference = 289;
+  var offset = circumference - (t / 100) * circumference;
+  document.getElementById('main-circle').style.strokeDashoffset = offset;
+  document.getElementById('main-score').textContent = t.toFixed(1);
+
+  var badge = document.getElementById('score-badge');
+  var circle = document.getElementById('main-circle');
+  
+  // Remove old inline styles and use CSS classes
+  badge.className = 'score-badge';
+  circle.className = '';
+  
+  if (t >= 85) { 
+    badge.textContent = 'EXCEPTIONAL'; 
+    badge.classList.add('exceptional');
+    circle.classList.add('exceptional');
+  }
+  else if (t >= 70) { 
+    badge.textContent = 'STRONG PROFILE'; 
+    badge.classList.add('strong');
+    circle.classList.add('strong');
+  }
+  else if (t >= 55) { 
+    badge.textContent = 'GOOD FOUNDATION'; 
+    badge.classList.add('good');
+    circle.classList.add('good');
+  }
+  else { 
+    badge.textContent = 'DEVELOPING'; 
+    badge.classList.add('developing');
+    circle.classList.add('developing');
+  }
+}
+
+function toggleProfileMenu() {
+  toggleMenu('profile-dropdown');
+}
+
+function handleLogout() {
+  localStorage.removeItem('portfolio-current-user');
+  showPopup('Logging out | Redirecting to login page...');
+  setTimeout(function() {
+    window.location.href = 'login.html';
+  }, 700);
+}
+
+(function loadUser() {
+  try {
+    var raw = localStorage.getItem('portfolio-current-user');
+    if (raw) {
+      var user = JSON.parse(raw);
+      if (user.name) {
+        var initials = user.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+        var av = document.getElementById('user-avatar');
+        if (av && initials) av.textContent = initials;
+        var pName = document.getElementById('profile-name-display');
+        if (pName) pName.textContent = user.name;
+        var pEmail = document.getElementById('profile-email-display');
+        if (pEmail) pEmail.textContent = (user.board || 'CBSE') + ' Grade ' + (user.grade || '12');
+        var gDisplay = document.getElementById('grade-display');
+        if (gDisplay && user.grade) gDisplay.textContent = user.grade;
+      }
+    }
+  } catch(e) {}
+})();
+
+function toggleGrade() {
+  var el = document.getElementById('grade-display');
+  el.textContent = el.textContent === '12' ? '11' : '12';
+}
+
+function toggleDate() {
+  var el = document.getElementById('date-pill');
+  el.textContent = el.textContent === '📅 Aug 2026' ? '📅 Sep 2026' : '📅 Aug 2026';
+}
+
+function applyTheme(mode) {
+  var pill = document.getElementById('theme-pill');
+  if (mode === 'light') {
+    document.body.classList.add('light-mode');
+    pill.textContent = '☀️';
+  } else {
+    document.body.classList.remove('light-mode');
+    pill.textContent = '🌙';
+  }
+}
+
+function toggleTheme() {
+  var isLight = document.body.classList.contains('light-mode');
+  var next = isLight ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem('portfolio-theme', next);
+}
+
+(function initTheme() {
+  var saved = localStorage.getItem('portfolio-theme');
+  if (saved) applyTheme(saved);
+})();
+
+function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+
+function toIcsDate(y, m, d) {
+  return y + pad2(m) + pad2(d) + 'T090000';
+}
+
+function exportCalendar() {
+  var events = [
+    { title: 'CUET Application Deadline', date: [2026, 9, 30], desc: 'Last date to submit CUET UG application form.' },
+    { title: 'JEE Main Session 2 Deadline', date: [2026, 11, 15], desc: 'Last date to register for JEE Main Session 2.' },
+    { title: 'Certificate Verification Reminder', date: [2026, 9, 12], desc: 'NSS Blood Drive certificate is still pending counselor verification.' },
+    { title: 'Suggested: Log a Mock Interview', date: [2026, 9, 20], desc: 'It has been 2+ weeks since your last mock interview attempt.' }
+  ];
+
+  var lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Student Portfolio Tracker//India Edition//EN'];
+  events.forEach(function (ev, i) {
+    var dt = toIcsDate(ev.date[0], ev.date[1], ev.date[2]);
+    lines.push('BEGIN:VEVENT');
+    lines.push('UID:portfolio-' + i + '-' + ev.date.join('') + '@student-portfolio');
+    lines.push('DTSTAMP:' + dt);
+    lines.push('DTSTART:' + dt);
+    lines.push('SUMMARY:' + ev.title);
+    lines.push('DESCRIPTION:' + ev.desc);
+    lines.push('END:VEVENT');
+  });
+  lines.push('END:VCALENDAR');
+
+  var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'portfolio_deadlines.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.addEventListener('keydown', function (e) {
+  var isSave = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's';
+  if (isSave) {
+    e.preventDefault();
+    showPopup('Quick Save | Add new activity form would open here (Ctrl+S shortcut)');
+  }
+});
+</script>
+<div class="popup-overlay" id="popup-overlay" onclick="if (event.target === this) closePopup()">
+  <div class="popup-card" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+    <div class="popup-title" id="popup-title"></div>
+    <div class="popup-lines" id="popup-lines"></div>
+    <div class="popup-actions"><button class="btn-primary" onclick="closePopup()">OK</button></div>
+  </div>
+</div>
+<!-- Floating Help Button -->
+<button class="help-btn" onclick="TutorialSystem.restart()" title="Start Tutorial" aria-label="Start interactive tutorial">
+  🎓
+</button>
+
+<!-- Tutorial System Script -->
+<script src="tutorial.js"></script>
+
+</body>
+</html>
