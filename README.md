@@ -2,7 +2,7 @@
 
 A dashboard for CBSE/ICSE/State Board secondary school students that tracks academic performance, extracurricular activities, community service hours, leadership roles, mock-interview readiness, and college application deadlines, and rolls them into a single holistic score.
 
-Currently a static, single-user HTML demo (`demo_dashboard_v4.html`, sample profile "Arjun Sharma"). No backend or database is wired up yet — `schema.sql`, `SQL-MAPPING.md`, and `ARCHITECTURE.md` lay out the plan for the full-stack version.
+Currently a static, single-user HTML demo (`demo_dashboard_v4.html`, sample profile "Arjun Sharma"). No backend is wired up — `schema.sql` lays out the planned database structure.
 
 ## Files
 
@@ -13,11 +13,6 @@ Currently a static, single-user HTML demo (`demo_dashboard_v4.html`, sample prof
 | `404.html` | Not-found page |
 | `tutorial.js` | First-visit onboarding walkthrough, 10 steps |
 | `schema.sql` | PostgreSQL schema for the planned backend (users, profiles, academics, activities, service hours, leadership, interviews, deadlines, consents, holistic scores) |
-| `sitemap.xml`, `robots.txt`, `llms.txt` | Site metadata |
-| `ARCHITECTURE.md` | Target architecture for the full-stack rebuild |
-| `SQL-MAPPING.md` | Maps each UI element to its database table/column |
-| `FIXES-NEEDED.md`, `BUG-FIXES-APPLIED.md`, `QUICK-SUMMARY.md` | Bug tracking and fix history |
-| `DEPLOYMENT-GUIDE.md` | Deployment options and feature roadmap |
 
 ## Holistic score
 
@@ -50,7 +45,7 @@ Demo credentials on the login screen: `arjun.sharma@school.edu`.
 ## Current limitations
 
 - Single hardcoded user, no real authentication.
-- No database — all data is static and resets on reload.
+- No database wired up — all data is static and resets on reload.
 - No file upload for certificates.
 - Not mobile-responsive.
 - Activities show as "verified" with no actual review workflow.
@@ -63,9 +58,3 @@ Demo credentials on the login screen: `arjun.sharma@school.edu`.
 - Auth: JWT + bcrypt
 - File storage: AWS S3 or Cloudinary
 - Deployment: Vercel (frontend), Railway or Supabase (backend/DB)
-
-See `ARCHITECTURE.md` for the full plan and `DEPLOYMENT-GUIDE.md` for deployment steps (static hosting via GitHub Pages/Netlify/Vercel, or the full Supabase + Vercel setup).
-
-## Known bugs
-
-See `FIXES-NEEDED.md` for the open list and `BUG-FIXES-APPLIED.md` for what's already fixed (theme-color and light-mode contrast issues in the dashboard).
